@@ -1,0 +1,41 @@
+name: CI/CD - Libreria
+
+on:
+  push:
+    branches:
+      - main  # Se ejecutará cuando hagas push a master
+
+jobs:
+  build-push-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el código
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # 2. Iniciar sesión en Docker Hub
+      - name: Iniciar sesión en Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # 3. Construir y subir la imagen a Docker Hub
+      - name: Construir y subir la imagen
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/libreria:latest
+
+      # 4. Conectarse a la VM Debian y desplegar la app
+      - name: Desplegar en la máquina Debian
+        run: |
+          echo "${{ secrets.SSH_KEY_B64 }}" | base64 -d > key.pem
+          chmod 600 key.pem
+          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/libreria:latest &&
+            docker stop libreria || true &&
+            docker rm libreria || true &&
+            docker run -d --name libreria -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/libreria:latest
+          "
