@@ -1,0 +1,58 @@
+.titulo {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.bloque-titulo {
+	height: 29px;
+}
+
+.bloques-home {
+	text-align: center;
+	position: relative;
+	top: -75px;
+}
+
+
+/*Tamaños de los bloques dependientes del ancho de la ventana*/
+.width-bloque{
+	width: 20%;
+}
+
+@media screen and (max-width:1300px) {
+	.width-bloque{
+		width: 30%;
+	}
+}
+
+
+@media screen and (max-width:800px) {
+	.width-bloque{
+		width: 75%;
+	}
+}
+
+.bloque {
+	padding: 25px;
+	background-color: white;
+	display: inline-grid;
+	text-align: left;
+}
+
+
+.image-bloque {
+	width: 95%;
+	margin-bottom: 10px;
+	cursor: pointer;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.margin-r-5 {
+	margin-right: 5px;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}

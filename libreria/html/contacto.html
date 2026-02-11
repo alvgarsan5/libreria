@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../css/comun.css">
+    <link rel="stylesheet" type="text/css" href="../css/contacto.css">
+</head>
+
+<body>
+
+    <header id="cabecera">
+        <nav id="menu">
+            <a class="elem-menu" id="home-link" href="../index.html">INICIO</a>
+            <a class="elem-menu" id="contacto-link" href="contacto.html">CONTACTO</a>
+            <a href="https://es-es.facebook.com/" target="_blank"><img class="icon" src="../images/icons/facebook.png"
+                    width="16"></a>
+            <a href="https://twitter.com/?lang=es/" target="_blank"><img class="icon" src="../images/icons/twitter.png"
+                    width="16"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img class="icon" src="../images/icons/instagram.png"
+                    width="16"></a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <figure>
+                <img class="image-principal" src="../images/portada.jpg" width="100%">
+            </figure>
+            <div class="bloques-contacto">
+                <div class="bloque">
+                    <form class="form" action="">
+                        <label class="required" for="nombreApell">Nombre y apellido</label><br>
+                        <input type="text" id="nombreApell" name="nombreApell" value="" required>
+                        <label class="required" for="correo">Correo electrónico</label><br>
+                        <input type="email" id="correo" name="correo" value="" required>
+                        <label class="required" for="telefono">Teléfono de contacto</label><br>
+                        <input type="text" id="telefono" name="telefono" value="">
+                        <label class="required" for="mensaje">Mensaje</label><br>
+                        <textarea id="mensaje" name="mensaje" rows="4" cols="28" required></textarea>
+                        <input type="checkbox" id="polPriv" name="polPriv" value="second_checkbox"> 
+                        <label id="text-pol-priv" for="polPriv">
+                            He leído y acepto la <a class="pol-priv" href="#">Política de
+                                privacidad</a>
+                        </label>
+                        <input id="btn-enviar" type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="pie">
+        <span id="usuario">@mariaarnau</span><span id="copyright">Copyright 2021</span>
+    </footer>
+
+</body>
+
+</html>

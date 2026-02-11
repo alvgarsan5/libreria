@@ -1,0 +1,63 @@
+body {
+	margin: 0px;
+	font-family: Optima, sans-serif;
+	font-size: 12px;
+}
+
+#cabecera {
+	background-color: black;
+	width: 290px;
+	padding: 12px 12px 16px 12px;
+	position: absolute;
+	top: 40px;
+	right: 0px;
+}
+
+#usuario {
+	padding-right: 10px;
+	border-right: 1px solid rgb(37, 37, 37);
+}
+
+#menu a {
+	text-decoration: none;
+	color: white;
+}
+
+.elem-menu:hover {
+	color: #f9810f !important;
+}
+
+#home-link {
+	margin-left: 70px;
+	margin-right: 10px;
+}
+
+#contacto-link {
+	border-right: 1px solid white;
+	padding-right: 12px;
+}
+
+.icon {
+	margin-left: 5px;
+}
+
+
+.image-principal {
+	display: block;
+	margin-bottom: 10px;
+}
+
+figure {
+	margin: 0px;
+}
+
+#copyright {
+	margin-left: 10px;
+}
+
+#pie {
+	background-color: #929294;
+	padding: 8px 0px 8px 0px;
+	text-align: center;
+	width: 100%;
+}
